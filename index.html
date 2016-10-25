@@ -8,14 +8,16 @@
     <link href="/styles/base.css" rel="stylesheet">
     <link href="/styles/layout.css" rel="stylesheet">
     <link href="/styles/module.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link href="/vendor/icomoon/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   </head>
   <body>
     <header>
       <img src="/imgs/profile.jpg" alt="Jonny Heemstra headshot image" />
       <h1>Jonny Heemstra</h1>
       <h4>Web Developer and Marketing Analyst</h4>
-      <nav>
+      <nav class="main_nav">
+        <div class="icon-menu"></div>
         <ul>
           <li><a href="#about">About Me</a></li>
           <li><a href="#projects">Projects</a></li>
@@ -73,9 +75,10 @@
         <article>
           <img src="/imgs/profile.jpg" alt="Jonny Heemstra headshot image" />
           <ul>
-            <li><a href="https://github.com/jonathanheemstra">Github</a></li>
-            <li><a href="https://www.facebook.com/jonny.heemstra">Facebook</a></li>
-            <li><a href="https://www.instagram.com/jonny_heemstra/">Instagram</a></li>
+            <li><a href="https://github.com/jonathanheemstra"><span class="icon-github"></span></a></li>
+            <li><a href="https://www.facebook.com/jonny.heemstra"><span class="icon-facebook2"></span></a></li>
+            <li><a href="https://www.instagram.com/jonny_heemstra/"><span class="icon-instagram"></span></a></li>
+            <li><a href="https://www.linkedin.com/in/jonathanheemstra"><span class="icon-linkedin"></span></a></li>
           </ul>
         </article>
         <article>
@@ -90,11 +93,11 @@
       </section>
     </main>
     <footer>
-      <nav>
+      <nav class="footer_nav">
         <ul>
-          <li>About Me</li>
-          <li>Projects</li>
-          <li>Lets Work Together</li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Lets Work Together</a></li>
         </ul>
       </nav>
       <p>Copyright 2016 | JonathanHeemstra.com</p>
