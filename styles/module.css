@@ -1,6 +1,18 @@
 header {
   background-color: #3E606F;
+  text-align: center;
 }
 footer, #contact {
   background-color: #193441;
+}
+header img {
+  border-radius: 100%;
+  margin: 5%;
+}
+header li {
+  border-right: 1px solid black;
+  padding: 0% 5%;
+}
+header li:last-child {
+  border-right: none;
 }
