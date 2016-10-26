@@ -26,13 +26,13 @@ header {
 /*
 Nav Styles
 */
-nav {
+.main_nav {
   display: block;
 }
-nav ul {
+.main_nav ul {
   display: none;
 }
-nav:hover ul, nav:hover li {
+.main_nav:hover ul, .main_nav:hover li {
   display: block;
   padding: 3% 0%;
 }
@@ -48,7 +48,7 @@ Styles specifically for desktop
 */
 
 @media screen and (min-width:760px) {
-  nav ul {
+  .main_nav ul {
     display: block;
   }
   .icon-menu {
