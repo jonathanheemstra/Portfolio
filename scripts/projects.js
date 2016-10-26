@@ -6,6 +6,7 @@ function Projects (project){
   this.projectUrl = project.projectUrl;
   this.body = project.body;
   this.skills = project.skills;
+  this.date = project.projectDate
 }
 Projects.prototype.toHtml = function () {
   var $newProject = $('article.project_template').clone();
@@ -14,9 +15,14 @@ Projects.prototype.toHtml = function () {
   $newProject.find('a').attr('href', this.projectUrl);
   $newProject.find('.project_description').html(this.body);
   $newProject.find('.project_skills').html(this.skills);
+  $newProject.find('time[pubdate]').attr('datetime', this.date);
+  $newProject.find('time').text(this.date);
   $newProject.removeClass('project_template').addClass('project');
   return $newProject;
 };
+projectsList.sort(function(currentProject, nextProject) {
+  return (new Date(nextProject.projectDate)) - (new Date(currentProject.projectDate));
+});
 projectsList.forEach(function(project) {
   projects.push(new Projects(project));
 });
