@@ -9,7 +9,7 @@ function Projects (project){
 }
 Projects.prototype.toHtml = function () {
   var $newProject = $('article.project_template').clone();
-  $newProject.find('h4').text(this.title);
+  $newProject.find('h4 a:contains("Title")').text(this.title);
   $newProject.find('img').attr('src', this.img);
   $newProject.find('a').attr('href', this.projectUrl);
   $newProject.find('.project_description').html(this.body);
