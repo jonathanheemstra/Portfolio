@@ -1,33 +1,27 @@
-
-footer, #contact {
-  /*background-color: #193441;*/
-  text-align: center;
-}
 #contact img, header img {
   border-radius: 100%;
   margin: 5%;
 }
-footer li, header li {
-  border-right: 1px solid black;
-  padding: 0% 5%;
+.social {
+  margin: 5% 0%;
 }
-footer li:last-child, header li:last-child {
-  border-right: none;
+.social li {
+  font-size: 2.5em;
+  margin: 0% 3%;
 }
 
 /*
 Header Styles
 */
-header {
-  /*background-color: #3E606F;*/
-  text-align: center;
-}
 
 /*
 Nav Styles
 */
-.main_nav {
+.icon-menu {
   display: block;
+  width: 100%;
+  text-align: left;
+  clear: both;
 }
 .main_nav ul {
   display: none;
@@ -37,11 +31,39 @@ Nav Styles
   padding: 3% 0%;
 }
 .icon-menu {
-  display: block;
-  text-align: right;
-  padding: 5% 5% 0% 0%;
+  position: fixed;
+  top: 0;
+  left: 0;
   font-size: 3em;
 }
+@media screen and (min-width:760px) {
+  .main_nav ul {
+    display: block;
+  }
+  .main_nav:hover ul, .main_nav:hover li {
+    display: inline;
+    padding: 0% 3%;
+  }
+  .icon-menu {
+    display: none;
+  }
+}
+
+/*
+About Me Styles
+*/
+
+/*#about section img:first-of-type {
+  display: inline-block;
+  max-width: 100%;
+}
+#about section img:last-of-type {
+  display: inline-block;
+  max-width: 100%;
+}
+#about p {
+  display: inline-block;
+}*/
 
 /*
 Project Template Styles
@@ -51,30 +73,36 @@ Project Template Styles
 }
 
 /*
-Styles specifically for desktop
+Contact Styles
 */
+input, textarea {
+  width: 90%;
+  display: block;
+  margin: 2% auto;
 
-@media screen and (min-width:760px) {
-  .main_nav ul {
-    display: block;
-  }
-  .main_nav:hover ul, .main_nav:hover li {
-    display: inline;
-    padding: 3% 0%;
-  }
-  .icon-menu {
-    display: none;
-  }
-  h1 {
-    font-size: 6em;
-  }
-  h2 {
-    font-size: 4em;
-  }
-  h3 {
-    font-size: 3em;
-  }
-  h4 {
-    font-size: 2em;
-  }
+}
+input {
+  height: 40px;
+  font-size: 2em;
+}
+textarea {
+  font-size: 1em;
+}
+button {
+  width: 90%;
+  height: 60px;
+  margin: 3% 0% 10% 0%;
+  border-radius: 5px;
+  background-color: #3E606F;
+  border-color: #3E606F;
+  font-size: 1.5em;
+  color: #FCFFF5;
+}
+
+/*
+Footer Styles
+*/
+.footer_nav li {
+  margin: 5% 0%;
+  display: block;
 }
