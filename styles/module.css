@@ -1,6 +1,6 @@
 
 footer, #contact {
-  background-color: #193441;
+  /*background-color: #193441;*/
   text-align: center;
 }
 #contact img, header img {
@@ -19,7 +19,7 @@ footer li:last-child, header li:last-child {
 Header Styles
 */
 header {
-  background-color: #3E606F;
+  /*background-color: #3E606F;*/
   text-align: center;
 }
 
@@ -57,6 +57,10 @@ Styles specifically for desktop
 @media screen and (min-width:760px) {
   .main_nav ul {
     display: block;
+  }
+  .main_nav:hover ul, .main_nav:hover li {
+    display: inline;
+    padding: 3% 0%;
   }
   .icon-menu {
     display: none;
