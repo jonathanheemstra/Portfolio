@@ -8,11 +8,36 @@
 .social li {
   font-size: 2.5em;
   margin: 0% 3%;
+  display: inline;
 }
 
 /*
 Header Styles
 */
+.hero {
+  background-image: url("../imgs/profile_sm.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 300px;
+}
+
+@media screen and (min-width:526px) {
+  .hero {
+    background-image: url("../imgs/profile_md.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 630px;
+  }
+}
+
+@media screen and (min-width:1051px) {
+  .hero {
+    background-image: url("../imgs/profile_lg.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 850px;
+  }
+}
 
 /*
 Nav Styles
@@ -37,16 +62,6 @@ Nav Styles
   font-size: 3em;
 }
 @media screen and (min-width:760px) {
-  .main_nav ul {
-    display: block;
-  }
-  .main_nav:hover ul, .main_nav:hover li {
-    display: inline;
-    padding: 0% 3%;
-  }
-  .icon-menu {
-    display: none;
-  }
 }
 
 /*
