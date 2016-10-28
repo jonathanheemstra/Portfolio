@@ -9,6 +9,7 @@
   font-size: 2.5em;
   margin: 0% 3%;
   display: inline;
+  cursor: pointer;
 }
 
 /*
@@ -18,7 +19,6 @@ Header Styles
   background-image: url("../imgs/profile_sm.jpg");
   background-size: 100%;
   background-repeat: no-repeat;
-  height: 300px;
 }
 
 @media screen and (min-width:526px) {
@@ -26,7 +26,6 @@ Header Styles
     background-image: url("../imgs/profile_md.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 630px;
   }
 }
 
@@ -35,34 +34,57 @@ Header Styles
     background-image: url("../imgs/profile_lg.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
-    height: 850px;
   }
 }
 
 /*
 Nav Styles
 */
-.icon-menu {
-  display: block;
-  width: 100%;
-  text-align: left;
-  clear: both;
-}
 .main_nav ul {
   display: none;
 }
-.main_nav:hover ul, .main_nav:hover li {
+.main_nav:hover ul{
   display: block;
-  padding: 3% 0%;
-}
-.icon-menu {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
+  background-color: #91AA9D;
+  cursor: pointer;
+}
+.main_nav:hover li{
+  display: block;
+  padding: 3%;
+  font-size: 2em;
+  cursor: pointer;
+}
+.main_nav li:hover {
+  background-color: #D1DBBD;
+  border-top: 1px solid black;
+
+}
+
+.icon-menu {
+  position: fixed;
+  top: 2%;
+  left: 2%;
   font-size: 3em;
+  z-index: 2;
 }
-@media screen and (min-width:760px) {
+
+/* TODO: Styles for broken main nav
+
+.icon-menu {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
 }
+label[for="icon-menu"] {
+  position: fixed;
+  top: 2%;
+  left: 2%;
+  font-size: 3em;
+  z-index: 2;
+}*/
 
 /*
 About Me Styles

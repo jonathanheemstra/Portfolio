@@ -25,7 +25,7 @@
         </a>
         <section class="project_description">{{{body}}}</section>
         <a href="#" class="learn_more">Learn more &rarr;</a>
-        <section class="project_skills">{{skills}}</section>
+        <section class="project_skills">{{#list skills}}{{skill}}{{/list}}</section>
       </article>
     </script>
   </head>
@@ -35,6 +35,9 @@
       <h4>Web Developer and Marketing Analyst</h4>
       <nav class="main_nav">
         <div class="icon-menu"></div>
+        <!-- TODO: FIX MAIN NAV TRIGGER https://www.sitepoint.com/pure-css-off-screen-navigation-menu/ -->
+        <!-- <input type="checkbox" id="icon-menu">
+        <label for="icon-menu" class="icon-menu"> -->
         <ul class="portfolio">
           <li><a href="#about">About Me</a></li>
           <li><a href="#projects">Projects</a></li>
