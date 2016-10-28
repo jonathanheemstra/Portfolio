@@ -10,6 +10,24 @@
     <link href="/styles/module.css" rel="stylesheet">
     <link href="/vendor/icomoon/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script id="project_template" type="text/x-handlebars-template">
+      <article class="project">
+        <header class="project_title">
+          <h4>
+            <a href="{{projectUrl}}">{{title}}</a>
+          </h4>
+          <div>
+            Date: <time pubdate datetime="{{projectDate}}">{{projectDate}}</time>
+          </div>
+        </header>
+        <a href="{{projectUrl}}">
+          <img src="{{img}}">
+        </a>
+        <section class="project_description">{{{body}}}</section>
+        <a href="#" class="learn_more">Learn more &rarr;</a>
+        <section class="project_skills">{{skills}}</section>
+      </article>
+    </script>
   </head>
   <body>
     <header class="hero">
@@ -48,22 +66,6 @@
         <header>
           <h2>Projects</h2>
         </header>
-        <article class="project_template">
-          <header class="project_title">
-            <h4>
-              <a href="#">Title</a>
-            </h4>
-            <div>
-              Date: <time pubdate datetime="2000-01-01">Publish Time</time>
-            </div>
-          </header>
-          <a href="#">
-            <img src="">
-          </a>
-          <section class="project_description"></section>
-          <a href="#" class="learn_more">Learn more &rarr;</a>
-          <section class="project_skills"></section>
-        </article>
       </section>
       <section id="contact">
         <article>
