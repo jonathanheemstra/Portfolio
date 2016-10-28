@@ -1,13 +1,31 @@
 var projects = [];
 
-function Projects (project){
-  this.title = project.title;
-  this.img = project.img;
-  this.projectUrl = project.projectUrl;
-  this.body = project.body;
-  this.skills = project.skills;
-  this.date = project.projectDate;
+// function Projects (project){
+//   this.title = project.title;
+//   this.img = project.img;
+//   this.projectUrl = project.projectUrl;
+//   this.body = project.body;
+//   this.skills = project.skills;
+//   this.date = project.projectDate;
+// }
+
+//Object constructor function
+/*
+  the data we are getting is coming from the function:
+
+      projectsList.forEach(function(project) {
+        projects.push(new Projects(project));
+      });
+
+  for each is looping through     
+  Key = the key in the projectsList object
+*/
+function Projects (projectsList) {
+  for (key in projectsList) {
+    this[key] = projectsList[key];
+  }
 }
+
 Projects.prototype.toHtml = function () {
   var source = $('#project_template').html();
   var templateRender = Handlebars.compile(source);
