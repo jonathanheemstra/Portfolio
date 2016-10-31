@@ -10,14 +10,34 @@
     <link href="/styles/module.css" rel="stylesheet">
     <link href="/vendor/icomoon/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <script id="project_template" type="text/x-handlebars-template">
+      <article class="project">
+        <header class="project_title">
+          <h4>
+            <a href="{{projectUrl}}">{{title}}</a>
+          </h4>
+          <div>
+            Date: <time pubdate datetime="{{projectDate}}">{{projectDate}}</time>
+          </div>
+        </header>
+        <a href="{{projectUrl}}">
+          <img src="{{img}}">
+        </a>
+        <section class="project_description">{{{body}}}</section>
+        <a href="#" class="learn_more">Learn more &rarr;</a>
+        <section class="project_skills">{{#list skills}}{{skill}}{{/list}}</section>
+      </article>
+    </script>
   </head>
   <body>
-    <header>
-      <img src="/imgs/profile.jpg" alt="Jonny Heemstra headshot image" />
+    <header class="hero">
       <h1>Jonny Heemstra</h1>
       <h4>Web Developer and Marketing Analyst</h4>
       <nav class="main_nav">
         <div class="icon-menu"></div>
+        <!-- TODO: FIX MAIN NAV TRIGGER https://www.sitepoint.com/pure-css-off-screen-navigation-menu/ -->
+        <!-- <input type="checkbox" id="icon-menu">
+        <label for="icon-menu" class="icon-menu"> -->
         <ul class="portfolio">
           <li><a href="#about">About Me</a></li>
           <li><a href="#projects">Projects</a></li>
@@ -30,7 +50,6 @@
         <li><a href="https://www.instagram.com/jonny_heemstra/"><span class="icon-instagram"></span></a></li>
         <li><a href="https://www.linkedin.com/in/jonathanheemstra"><span class="icon-linkedin"></span></a></li>
       </ul>
-
     </header>
     <main>
       <section id="about">
@@ -50,22 +69,6 @@
         <header>
           <h2>Projects</h2>
         </header>
-        <article class="project_template">
-          <header class="project_title">
-            <h4>
-              <a href="#">Title</a>
-            </h4>
-            <div>
-              Date: <time pubdate datetime="2000-01-01">Publish Time</time>
-            </div>
-          </header>
-          <a href="#">
-            <img src="">
-          </a>
-          <section class="project_description"></section>
-          <a href="#" class="learn_more">Learn more &rarr;</a>
-          <section class="project_skills"></section>
-        </article>
       </section>
       <section id="contact">
         <article>
@@ -108,8 +111,9 @@
       <p>Copyright 2016 | JonathanHeemstra.com</p>
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script src="scripts/projectsList.js"></script>
-<script src="scripts/projects.js"></script>
-<script src="scripts/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="scripts/projectsList.js"></script>
+    <script src="scripts/projects.js"></script>
+    <script src="scripts/app.js"></script>
   </body>
 </html>
