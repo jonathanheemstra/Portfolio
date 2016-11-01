@@ -40,41 +40,10 @@ Header Styles
 /*
 Nav Styles
 */
-.main_nav ul {
+.portfolio, .social {
   display: none;
 }
-.main_nav:hover ul{
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #91AA9D;
-  cursor: pointer;
-}
-.main_nav:hover li{
-  display: block;
-  padding: 3%;
-  font-size: 2em;
-  cursor: pointer;
-}
-.main_nav li:hover {
-  background-color: #D1DBBD;
-  border-top: 1px solid black;
-
-}
-
-.icon-menu {
-  position: fixed;
-  top: 2%;
-  left: 2%;
-  font-size: 3em;
-  z-index: 2;
-}
-
-/* TODO: Styles for broken main nav
-
-.icon-menu {
+#icon-menu {
   clip: rect(0, 0, 0, 0);
   position: absolute;
 }
@@ -84,8 +53,28 @@ label[for="icon-menu"] {
   left: 2%;
   font-size: 3em;
   z-index: 2;
-}*/
-
+  cursor: pointer;
+}
+#icon-menu:checked ~ .portfolio {
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+}
+.portfolio li {
+  display: block;
+  padding: 3%;
+}
+.portfolio li:hover {
+  background-color: #D1DBBD;
+  cursor: pointer;
+}
+#icon-menu:checked ~ .social {
+  display: inline;
+  width: 100%;
+  background: white;
+}
 /*
 About Me Styles
 */
