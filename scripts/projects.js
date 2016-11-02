@@ -16,6 +16,8 @@
     }
   }
 
+
+
   Projects.allProjects = [];
 
   // Function to get the project template from index.html and then compile and render the template.
@@ -30,7 +32,7 @@
     inputProjects.sort(function (currentProject, nextProject) {
       return (new Date(nextProject.projectDate)) - (new Date(currentProject.projectDate));
     })
-    .forEach(function(ele) {
+    .map(function(ele) {
       // Push each constrcutred object from the projectsList into the projects array.
       Projects.allProjects.push(new Projects(ele));
     });
@@ -40,7 +42,7 @@
     if (localStorage.projects) {
       var projects = JSON.parse(localStorage.getItem('projects'));
       Projects.loadAll(projects);
-      Projects.allProjects.forEach(function(project){
+      Projects.allProjects.map(function(project){
         $('#projects').append(project.toHtml());
       });
       console.log('Loaded from Local');
@@ -48,7 +50,7 @@
       $.getJSON('../data/projectsData.json', function (projects) {
         Projects.loadAll(projects);
         localStorage.setItem('projects', JSON.stringify(projects));
-        Projects.allProjects.forEach(function(project){
+        Projects.allProjects.map(function(project){
           $('#projects').append(project.toHtml());
         });
         console.log('Loaded from database');
