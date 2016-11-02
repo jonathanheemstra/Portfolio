@@ -1,15 +1,5 @@
 (function(module) {
   // Object constructor function
-  /*
-    the data we are getting is coming from the function:
-
-        projectsList.forEach(function(project) {
-          projects.push(new Projects(project));
-        });
-
-    for each is looping through
-    Key = the key in the projectsList object
-  */
   function Projects (projectsList) {
     for (key in projectsList) {
       this[key] = projectsList[key];
@@ -24,33 +14,46 @@
   };
 
   Projects.loadAll = function (inputProjects) {
-    // Function to sort the projectsList array of objects by date.
     Projects.allProjects = inputProjects.sort(function (currentProject, nextProject) {
       return (new Date(nextProject.projectDate)) - (new Date(currentProject.projectDate));
     })
     .map(function(ele) {
-      // Push each constrcutred object from the projectsList into the projects array.
       return new Projects(ele);
+    });
+  };
+
+  Projects.loadDatabase = function () {
+    $.getJSON('../data/projectsData.json', function (projects, message, xhr) {
+      Projects.loadAll(projects);
+      localStorage.setItem('projects', JSON.stringify(projects));
+      Projects.allProjects.map(function(project){
+        $('#projects').append(project.toHtml());
+      });
+      localStorage.setItem('ETag', xhr.getResponseHeader('ETag'));
+      console.log('Loaded from database');
     });
   };
 
   Projects.fetchAll = function () {
     if (localStorage.projects) {
-      var projects = JSON.parse(localStorage.getItem('projects'));
-      Projects.loadAll(projects);
-      Projects.allProjects.map(function(project){
-        $('#projects').append(project.toHtml());
+      $.ajax({
+        url: '../data/projectsData.json',
+        type: 'HEAD',
+        success: function (data, message, xhr){
+          if(localStorage.ETag === xhr.getResponseHeader('ETag')) {
+            var projects = JSON.parse(localStorage.getItem('projects'));
+            Projects.loadAll(projects);
+            Projects.allProjects.map(function(project){
+              $('#projects').append(project.toHtml());
+            });
+            console.log('Loaded from Local');
+          } else {
+            Projects.loadDatabase();
+          }
+        }
       });
-      console.log('Loaded from Local');
     } else {
-      $.getJSON('../data/projectsData.json', function (projects) {
-        Projects.loadAll(projects);
-        localStorage.setItem('projects', JSON.stringify(projects));
-        Projects.allProjects.map(function(project){
-          $('#projects').append(project.toHtml());
-        });
-        console.log('Loaded from database');
-      });
+      Projects.loadDatabase();
     }
   };
 
