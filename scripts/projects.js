@@ -16,10 +16,6 @@
     }
   }
 
-
-
-  Projects.allProjects = [];
-
   // Function to get the project template from index.html and then compile and render the template.
   Projects.prototype.toHtml = function () {
     var source = $('#project_template').html();
@@ -29,12 +25,12 @@
 
   Projects.loadAll = function (inputProjects) {
     // Function to sort the projectsList array of objects by date.
-    inputProjects.sort(function (currentProject, nextProject) {
+    Projects.allProjects = inputProjects.sort(function (currentProject, nextProject) {
       return (new Date(nextProject.projectDate)) - (new Date(currentProject.projectDate));
     })
     .map(function(ele) {
       // Push each constrcutred object from the projectsList into the projects array.
-      Projects.allProjects.push(new Projects(ele));
+      return new Projects(ele);
     });
   };
 
