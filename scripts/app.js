@@ -1,3 +1,5 @@
+'use strict';
+
 (function(module) {
 
   var portfolioView = {};
@@ -35,5 +37,5 @@
   portfolioView.learnMoreCollapse();
 
   module.portfolioView = portfolioView;
-  
+
 })(window);

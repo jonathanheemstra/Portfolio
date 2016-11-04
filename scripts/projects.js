@@ -1,3 +1,5 @@
+'use strict';
+
 (function(module) {
   // Object constructor function
   // function Projects (projectsList) {
