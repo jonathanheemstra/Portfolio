@@ -19,15 +19,15 @@
     <script id="project_template" type="text/x-handlebars-template">
       <article class="project">
         <header class="row project_title">
-          <h4>
+          <h3>
             <a href="{{projectUrl}}">{{title}}</a>
-          </h4>
+          </h3>
         </header>
         <section class="row project_description">
           <a href="{{projectUrl}}" class="col-md-4">
             <img src="{{img}}" class="img-responsive">
           </a>
-          <div class="col-md-8 text-left">
+          <div class="col-md-8 text-left project_body">
             {{{body}}}
           </div>
         </section>
@@ -35,8 +35,8 @@
           <div class="col-md-4">
             Date: <time pubdate datetime="{{projectDate}}">{{projectDate}}</time>
           </div>
-          <a href="#" class="col-md-2 text-left learn_more">Learn more &rarr;</a>
-          <div class="col-md-6 project_skills">
+          <a href="#" class="col-md-2 text-left learn_more">Show More &rarr;</a>
+          <div class="col-md-6 text-left project_skills">
             {{#list skills}}{{skill}}{{/list}}
           </div>
         </section>
