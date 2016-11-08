@@ -1,24 +1,10 @@
-'use strict';
-
 (function(module) {
-  // Object constructor function
-  // function Projects (projectsList) {
-  //   for (key in projectsList) {
-  //     this[key] = projectsList[key];
-  //   }
-  // }
+  'use strict';
 
   //Object is = to the global object of JS (i.e. similar to how we can call JSON)
   function Projects (opts) {
-    console.log('THIS IS OBJECT (line 11)\n', Object);
-    console.log('THIS IS OBJECT.KEYS (line 12)\n', Object.keys);
-    console.log('THIS IS OBJECT.VALUES (line 13)\n', Object.values);
-    console.log('THIS IS opts (line 14)\n', opts);
-
     Object.keys(opts).forEach(function(prop) {
-      console.log('THIS IS prop (line 17)\n', prop);
       this[prop] = opts[prop];
-      console.log('THIS IS opts[prop] (line 19)\n', opts[prop]);
     }, this); // The optional 'this' here is necessary to keep context.
   }
 
@@ -35,7 +21,7 @@
     })
     .map(function(ele) {
       return new Projects(ele);
-    });
+    });  
     Projects.allProjects.map(function(project){
       $('#projects').append(project.toHtml());
     });

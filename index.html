@@ -17,14 +17,11 @@
     <link href="/vendor/icomoon/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script id="project_template" type="text/x-handlebars-template">
-      <article class="row project">
+      <article class="project">
         <header class="row project_title">
           <h4>
             <a href="{{projectUrl}}">{{title}}</a>
           </h4>
-          <div class="row">
-            Date: <time pubdate datetime="{{projectDate}}">{{projectDate}}</time>
-          </div>
         </header>
         <section class="row project_description">
           <a href="{{projectUrl}}" class="col-md-4">
@@ -32,10 +29,15 @@
           </a>
           <div class="col-md-8 text-left">
             {{{body}}}
-            <a href="#" class="col-md-4 learn_more">Learn more &rarr;</a>
-            <div class="col-md-8 project_skills">
-              {{#list skills}}{{skill}}{{/list}}
-            </div>
+          </div>
+        </section>
+        <section class="row">
+          <div class="col-md-4">
+            Date: <time pubdate datetime="{{projectDate}}">{{projectDate}}</time>
+          </div>
+          <a href="#" class="col-md-2 text-left learn_more">Learn more &rarr;</a>
+          <div class="col-md-6 project_skills">
+            {{#list skills}}{{skill}}{{/list}}
           </div>
         </section>
       </article>

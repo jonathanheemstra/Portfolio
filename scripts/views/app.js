@@ -2,17 +2,6 @@
   'use strict';
 
   var portfolioView = {};
-
-  // Hide sections once user clicks on main nav
-  // portfolioView.handleNav = function () {
-  //   $('.main_nav').on('click', '.portfolio li', function(event){
-  //     var navEl = $(this).find('a').attr('href');
-  //     event.preventDefault();
-  //     $('#about, #projects, #contact').hide();
-  //     $(navEl).fadeIn().scroll();
-  //   });
-  // };
-
   // Expand and Collapse project descriptions
   portfolioView.learnMoreExpand = function () {
     $('.project_description *:nth-of-type(n+2)').hide();
@@ -22,6 +11,7 @@
       $(this).html('Collapse  &rarr;').removeClass('learn_more').addClass('learn_more_collapse');
     });
   };
+  
   portfolioView.learnMoreCollapse = function () {
     $('#projects').on('click', '.learn_more_collapse', function(event) {
       event.preventDefault();
@@ -31,8 +21,6 @@
   };
 
   // Invoke all functions
-  // portfolioView.handleNav();
 
   module.portfolioView = portfolioView;
-
 })(window);
