@@ -40,6 +40,15 @@ Header Styles
 /*
 Nav Styles
 */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  left: 0;  
+}
+
 .portfolio, .social {
   display: none;
 }
@@ -97,7 +106,7 @@ input {
 textarea {
   font-size: 1em;
 }
-button {
+/*button {
   width: 90%;
   height: 60px;
   margin: 3% 0% 10% 0%;
@@ -106,7 +115,7 @@ button {
   border-color: #3E606F;
   font-size: 1.5em;
   color: #FCFFF5;
-}
+}*/
 
 /*
 Footer Styles
