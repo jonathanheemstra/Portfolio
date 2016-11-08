@@ -3,7 +3,7 @@
   var homeController = {};
 
   homeController.reveal = function () {
-    $('main').show();
+    $('#about, #projects, #contact').show();
   };
 
   module.homeController = homeController;

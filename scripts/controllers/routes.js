@@ -1,5 +1,5 @@
 page('/', homeController.reveal);
-// page('/about',);
-// page('/contact',);
+page('/about', aboutController.reveal);
+page('/contact', contactController.reveal);
 page('/projects', projectsController.reveal);
 page();
