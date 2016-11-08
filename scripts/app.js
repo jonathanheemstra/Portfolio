@@ -1,4 +1,5 @@
 'use strict';
+// var portfolioView = {};
 
 (function(module) {
 
@@ -33,8 +34,6 @@
 
   // Invoke all functions
   portfolioView.handleNav();
-  portfolioView.learnMoreExpand();
-  portfolioView.learnMoreCollapse();
 
   module.portfolioView = portfolioView;
 

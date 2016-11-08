@@ -39,6 +39,8 @@
     Projects.allProjects.map(function(project){
       $('#projects').append(project.toHtml());
     });
+    portfolioView.learnMoreExpand();
+    portfolioView.learnMoreCollapse();
   };
 
   Projects.loadDatabase = function () {
