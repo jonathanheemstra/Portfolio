@@ -1,3 +1,5 @@
+'use strict';
+
 var projectsList = [
   {
     title:      'Project 1',

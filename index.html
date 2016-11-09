@@ -2,9 +2,15 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Jonathan </title>
     <link href="/styles/reset.css" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <link href="/styles/base.css" rel="stylesheet">
     <link href="/styles/layout.css" rel="stylesheet">
     <link href="/styles/module.css" rel="stylesheet">
@@ -12,108 +18,146 @@
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <script id="project_template" type="text/x-handlebars-template">
       <article class="project">
-        <header class="project_title">
-          <h4>
+        <header class="row project_title">
+          <h3>
             <a href="{{projectUrl}}">{{title}}</a>
-          </h4>
-          <div>
+          </h3>
+        </header>
+        <section class="row project_description">
+          <a href="{{projectUrl}}" class="col-md-4">
+            <img src="{{img}}" class="img-responsive">
+          </a>
+          <div class="col-md-8 text-left project_body">
+            {{{body}}}
+          </div>
+        </section>
+        <section class="row">
+          <div class="col-md-4">
             Date: <time pubdate datetime="{{projectDate}}">{{projectDate}}</time>
           </div>
-        </header>
-        <a href="{{projectUrl}}">
-          <img src="{{img}}">
-        </a>
-        <section class="project_description">{{{body}}}</section>
-        <a href="#" class="learn_more">Learn more &rarr;</a>
-        <section class="project_skills">{{#list skills}}{{skill}}{{/list}}</section>
+          <a href="#" class="col-md-2 text-left learn_more">Show More &rarr;</a>
+          <div class="col-md-6 text-left project_skills">
+            {{#list skills}}{{skill}}{{/list}}
+          </div>
+        </section>
       </article>
     </script>
-  </head>
-  <body>
-    <header>
-      <nav class="main_nav">
-        <input type="checkbox" id="icon-menu">
-        <label for="icon-menu" class="icon-menu"></label>
-        <ul class="portfolio">
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Lets Work Together</a></li>
-        </ul>
-        <ul class="social">
-          <li><a href="https://github.com/jonathanheemstra" class="icon-github"></a></li>
-          <li><a href="https://www.facebook.com/jonny.heemstra" class="icon-facebook2"></a></li>
-          <li><a href="https://www.instagram.com/jonny_heemstra/" class="icon-instagram"></a></li>
-          <li><a href="https://www.linkedin.com/in/jonathanheemstra" class="icon-linkedin"></a></li>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <header class="hero">
-        <h1>Jonny Heemstra</h1>
-        <h4>Web Developer and Marketing Analyst</h4>
-      </header>
-      <section id="about">
-        <article>
-          <header>
-            <h2>About Me</h2>
-          </header>
-          <section>
-            <img src="http://placehold.it/350x150">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <img src="http://placehold.it/350x150">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </section>
-        </article>
-      </section>
-      <section id="projects">
-        <header>
-          <h2>Projects</h2>
-        </header>
-      </section>
-      <section id="contact">
-        <article>
-          <header>
-            <h2>Lets Work Together</h2>
-          </header>
-          <section>
-            <img src="/imgs/profile.jpg" alt="Jonny Heemstra headshot image" />
-            <ul class="social">
-              <li><a href="https://github.com/jonathanheemstra"><span class="icon-github"></span></a></li>
-              <li><a href="https://www.facebook.com/jonny.heemstra"><span class="icon-facebook2"></span></a></li>
-              <li><a href="https://www.instagram.com/jonny_heemstra/"><span class="icon-instagram"></span></a></li>
-              <li><a href="https://www.linkedin.com/in/jonathanheemstra"><span class="icon-linkedin"></span></a></li>
-            </ul>
-          </section>
-          <section class="contact">
-            <form>
-              <label for="name">Name</label>
-              <input type="text" name="name" value="">
-              <label for="email">Email</label>
-              <input type="text" name="email" value="">
-              <label for="phone">Phone</label>
-              <input type="text" name="phone" value="">
-              <label for="message">Message</label>
-              <textarea name="message" rows="8" cols="1000"></textarea>
-              <button type="button" name="button">Lets Work Together</button>
-            </form>
-          </section>
-        </article>
-      </section>
-    </main>
-    <footer>
-      <nav class="footer_nav">
-        <ul>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Lets Work Together</a></li>
-        </ul>
-      </nav>
-      <p>Copyright 2016 | JonathanHeemstra.com</p>
-    </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-    <script src="scripts/projectsList.js"></script>
-    <script src="scripts/projects.js"></script>
-    <script src="scripts/app.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <nav class="navbar navbar-default">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/">Jonathan Heemstra</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+              <li><a href="/about">About Me</a></li>
+              <li><a href="/projects">Projects</a></li>
+              <li><a href="/contact">Lets Work Together</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="https://github.com/jonathanheemstra" class="icon-github"></a></li>
+              <li><a href="https://www.facebook.com/jonny.heemstra" class="icon-facebook2"></a></li>
+              <li><a href="https://www.instagram.com/jonny_heemstra/" class="icon-instagram"></a></li>
+              <li><a href="https://www.linkedin.com/in/jonathanheemstra" class="icon-linkedin"></a></li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <main>
+        <header class="jumbotron page-header hero">
+          <h1>Jonny Heemstra</h1>
+          <h4>Web Developer and Marketing Analyst</h4>
+        </header>
+        <section id="about">
+          <article>
+            <header>
+              <h2>About Me</h2>
+            </header>
+            <section>
+              <div class="row">
+                <img src="http://placehold.it/350x150" class="col-md-5 img-responsive">
+                <p class="col-md-7 text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+              <div class="row">
+                <img src="http://placehold.it/350x150" class="col-md-5 img-responsive">
+                <p class="col-md-7 text-left">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
+            </section>
+          </article>
+        </section>
+        <section id="projects">
+          <header>
+            <h2>Projects</h2>
+          </header>
+        </section>
+        <section id="contact">
+          <article>
+            <header>
+              <h2>Lets Work Together</h2>
+            </header>
+            <section>
+              <img src="/imgs/profile.jpg" alt="Jonny Heemstra headshot image" />
+              <ul class="social">
+                <li><a href="https://github.com/jonathanheemstra"><span class="icon-github"></span></a></li>
+                <li><a href="https://www.facebook.com/jonny.heemstra"><span class="icon-facebook2"></span></a></li>
+                <li><a href="https://www.instagram.com/jonny_heemstra/"><span class="icon-instagram"></span></a></li>
+                <li><a href="https://www.linkedin.com/in/jonathanheemstra"><span class="icon-linkedin"></span></a></li>
+              </ul>
+            </section>
+            <section class="contact">
+              <form>
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" name="name" value="" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="text" name="email" value="" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="text" name="phone" value="" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea name="message" rows="8" cols="1000" class="form-control"></textarea>
+                </div>
+                <button type="button" name="button" class="btn btn-default">Lets Work Together</button>
+              </form>
+            </section>
+          </article>
+        </section>
+      </main>
+      <footer>
+        <nav class="footer_nav">
+          <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Lets Work Together</a></li>
+          </ul>
+        </nav>
+        <p>Copyright 2016 | JonathanHeemstra.com</p>
+      </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
+    <script src="data/projectsList.js"></script>
+    <script src="scripts/models/projects.js"></script>
+    <script src="scripts/views/app.js"></script>
+    <script src="scripts/controllers/aboutController.js"></script>
+    <script src="scripts/controllers/contactController.js"></script>
+    <script src="scripts/controllers/homeController.js"></script>
+    <script src="scripts/controllers/projectsController.js"></script>
+    <script src="scripts/controllers/routes.js"></script>
   </body>
 </html>
