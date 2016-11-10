@@ -1,6 +1,10 @@
+/* Navbar is always 50px so that's why I chose this number
+but remember that header has margin-top: 40px from bootstrap,
+so that's why it's not sticked to the navigation bar*/
 body {
   margin: 0 auto;
   text-align: center;
+  padding-top: 50px;
 }
 li {
   display: inline;
