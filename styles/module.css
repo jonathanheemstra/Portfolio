@@ -2,15 +2,6 @@
   border-radius: 100%;
   margin: 5%;
 }
-.social {
-  margin: 5% 0%;
-}
-.social li {
-  font-size: 2.5em;
-  margin: 0% 3%;
-  display: inline;
-  cursor: pointer;
-}
 
 /*
 Header Styles
@@ -46,44 +37,9 @@ Nav Styles
   top: 0;
   z-index: 999;
   width: 100%;
-  left: 0;  
+  left: 0;
 }
 
-.portfolio, .social {
-  display: none;
-}
-#icon-menu {
-  clip: rect(0, 0, 0, 0);
-  position: absolute;
-}
-label[for="icon-menu"] {
-  position: fixed;
-  top: 2%;
-  left: 2%;
-  font-size: 3em;
-  z-index: 2;
-  cursor: pointer;
-}
-#icon-menu:checked ~ .portfolio {
-  display: block;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: white;
-}
-.portfolio li {
-  display: block;
-  padding: 3%;
-}
-.portfolio li:hover {
-  background-color: #D1DBBD;
-  cursor: pointer;
-}
-#icon-menu:checked ~ .social {
-  display: inline;
-  width: 100%;
-  background: white;
-}
 /*
 About Me Styles
 */

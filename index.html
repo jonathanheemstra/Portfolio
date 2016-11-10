@@ -42,6 +42,15 @@
         </section>
       </article>
     </script>
+    <script id="github_template" type="text/x-handlebars-template">
+      <article class="github">
+        <section>
+          <ul>
+            <li><a href="{{html_url}}">{{name}}</a></li>
+          </ul>
+        </section>
+      </article>
+    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
@@ -65,7 +74,7 @@
               <li><a href="/projects">Projects</a></li>
               <li><a href="/contact">Lets Work Together</a></li>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="nav navbar-nav navbar-right social">
               <li><a href="https://github.com/jonathanheemstra" class="icon-github"></a></li>
               <li><a href="https://www.facebook.com/jonny.heemstra" class="icon-facebook2"></a></li>
               <li><a href="https://www.instagram.com/jonny_heemstra/" class="icon-instagram"></a></li>
@@ -99,6 +108,11 @@
         <section id="projects">
           <header>
             <h2>Projects</h2>
+          </header>
+        </section>
+        <section id="github_stats">
+          <header>
+            <h2>GitHub Stats</h2>
           </header>
         </section>
         <section id="contact">
@@ -151,8 +165,11 @@
       </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
+    <script src="githubToken.js"></script>
     <script src="data/projectsList.js"></script>
     <script src="scripts/models/projects.js"></script>
+    <script src="scripts/models/repo.js"></script>
+    <script src="scripts/views/repoView.js"></script>
     <script src="scripts/views/app.js"></script>
     <script src="scripts/controllers/aboutController.js"></script>
     <script src="scripts/controllers/contactController.js"></script>
