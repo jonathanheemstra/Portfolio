@@ -2,18 +2,12 @@
   'use strict';
   var repos = {};
 
-  repos.allRepos = [];
-
   repos.getRepos = function (callback) {
-    $.ajax({
-      url: 'https://api.github.com/users/jonathanheemstra/repos',
-      type: 'GET',
-      header: {'Authorization': 'token ' + githubToken},
-      success: function(data){
+    $.when(
+      $.get('/github/users/jonathanheemstra/repos', function(data) {
         repos.allRepos = data;
-        callback();
-      }
-    });
+      })
+    ).done(callback);
   };
 
   repos.githubAttr = function(attr) {
