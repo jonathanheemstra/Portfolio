@@ -2,11 +2,11 @@
   'use strict';
   var repos = {};
 
-  repos.allRepos = [];
-
   repos.getRepos = function (callback) {
     $.when(
-      $.get('/github/users/jonathanheemstra/repos')
+      $.get('/github/users/jonathanheemstra/repos', function(data) {
+        repos.allRepos = data;
+      })
     ).done(callback);
   };
 
